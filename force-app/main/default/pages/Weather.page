@@ -1,0 +1,32 @@
+<apex:page id="Weather" lightningStylesheets="true" controller="WeatherController">
+    <apex:sectionHeader title="Weather" subTitle="Search for new cities and click Add to add them to Saved Cities">
+    </apex:sectionHeader>
+    <apex:pageMessages showDetail="true"/>
+    <apex:form >
+        <apex:pageBlock title="Add a City">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Search" action="{!search}"/>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="1">
+                <apex:inputText value="{!searchTerm}" html-placeholder="Search for a city by name"></apex:inputText>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Cities Found" columns="1">
+                <apex:repeat value="{!searchResult}" var="city">
+                    <apex:pageBlockSectionItem>
+                        <apex:outputText value="{!city}"/>
+                        <apex:commandLink action="{!addCity}" value="Add" styleClass="btn">
+                            <apex:param name="city" value="{!city}"/>
+                        </apex:commandLink>
+                    </apex:pageBlockSectionItem>
+                </apex:repeat>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:pageBlock title="Saved Cities">
+        <apex:pageBlockTable value="{!cities}" var="city">
+            <apex:column value="{!city.Name}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
