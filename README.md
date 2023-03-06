@@ -2,7 +2,7 @@
 
 This git repository contains a "blank" SFDX project to serve as the starting point for the tasks outlined in the coding challenge instructions.
 
-While Visualforce its limitations, it is a satisfactory and simple choice for building the UI for the solution. Building the same UI in LWC would consume too much time and the Apex implementation is where you should prioritize your time.
+While Visualforce has its limitations, it is a satisfactory and simple choice for building the UI for the solution. Building the same UI in LWC would consume too much time and the Apex implementation is where you should prioritize your time.
 
 
 ## Deployment
