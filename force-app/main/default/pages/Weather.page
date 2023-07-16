@@ -13,20 +13,27 @@
             </apex:pageBlockSection>
 
             <apex:pageBlockSection title="Cities Found" columns="1">
-                <apex:repeat value="{!searchResult}" var="city">
+                <apex:repeat rendered="{!searchResult.errorMessage == null}" value="{!searchResult.results[0].locations}" var="city">
                     <apex:pageBlockSectionItem>
-                        <apex:outputText value="{!city}"/>
+                        <apex:outputText value="{!city.city +', ' + city.state}"/>
                         <apex:commandLink action="{!addCity}" value="Add" styleClass="btn">
-                            <apex:param name="city" value="{!city}"/>
+                            <apex:param name="cityIdentifier" value="{!city.identifier}"/>
                         </apex:commandLink>
                     </apex:pageBlockSectionItem>
                 </apex:repeat>
+                <apex:pageBlockSectionItem rendered="{!searchResult.errorMessage != null}">
+                    <apex:outputText value="{!searchResult.errorMessage}"/>
+                </apex:pageBlockSectionItem>
             </apex:pageBlockSection>
         </apex:pageBlock>
     </apex:form>
     <apex:pageBlock title="Saved Cities">
-        <apex:pageBlockTable value="{!cities}" var="city">
+        <apex:pageBlockTable rendered="{!cities.size > 0}" value="{!cities}" var="city">
             <apex:column value="{!city.Name}"/>
+            <apex:column value="{!city.State__c}"/>
+            <apex:column value="{!city.Location__Latitude__s}"/>
+            <apex:column value="{!city.Location__Longitude__s}"/>
         </apex:pageBlockTable>
+        <apex:outputText rendered="{!cities.size == 0}" value="Add a city from the Search to begin"/>
     </apex:pageBlock>
 </apex:page>

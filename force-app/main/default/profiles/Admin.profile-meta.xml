@@ -22,6 +22,21 @@
         <object>WeatherCity__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <fieldPermissions>
+        <field>WeatherCity__c.Location__c</field>
+        <editable>true</editable>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <field>WeatherCity__c.Name</field>
+        <editable>true</editable>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <field>WeatherCity__c.State__c</field>
+        <editable>true</editable>
+        <readable>true</readable>
+    </fieldPermissions>
     <pageAccesses>
         <apexPage>Weather</apexPage>
         <enabled>true</enabled>
