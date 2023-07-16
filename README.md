@@ -7,7 +7,7 @@ While Visualforce has its limitations, it is a satisfactory and simple choice fo
 ## Deployment
 
 ```
-git clone git@github.com:patronmanager/pm-coding-challenge.git
+git clone https://github.com/techheadnick/patronChallenge.git
 cd pm-coding-challenge
 sfdx org:create:scratch -f config/project-scratch-def.json -d
 sfdx force:source:push
