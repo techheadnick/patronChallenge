@@ -22,7 +22,7 @@ Then Add the API key to the External Credential. You can do this by opening the 
 ## UI
 From the Sales app, click the Weather tab to get started!
 
-##Incomplete Tasks:
+## Incomplete Tasks:
 
 **Displaying an error when city information is not retrieved**. 
 
