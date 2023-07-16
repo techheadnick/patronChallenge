@@ -23,9 +23,17 @@ Then Add the API key to the External Credential. You can do this by opening the 
 From the Sales app, click the Weather tab to get started!
 
 ##Incomplete Tasks:
-**Displaying an error when city information is not retrieved**. This proved to be more complicated than I expected due to there being a default city that is returning regardless of input. I have some ideas for this but
-did not feel it was worth the time investment up front. 
-**Excluding multiple entries of the same city**. Should this be limited to only the loc/lat combination being unique or is any value containing the city state sufficient? This has a complicated answer because if the user
+
+**Displaying an error when city information is not retrieved**. 
+
+This proved to be more complicated than I expected due to there being a default city that is returning regardless of input. I have some ideas for this but
+did not feel it was worth the time investment up front.
+
+**Excluding multiple entries of the same city**. 
+
+Should this be limited to only the loc/lat combination being unique or is any value containing the city state sufficient? This has a complicated answer because if the user
 inputs a very specific location when searching for a city for the first time IE:(1234 street City, State zip code) then the lat/lng will be off from what someone would consider if only inputting the "City/state" combination. Do we want to validate on input that it only contains city and state in the search? If so the validation may be complicated but is a possibility.
+
 **Retrieving the weather data and displaying it on a dashboard.**
+
 **Testing one of the methods.**
